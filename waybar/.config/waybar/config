@@ -1,0 +1,73 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 25,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "battery",
+        "tray"
+    ],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "disable-markup": true,
+        "format": "{index}"
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 150
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 15
+    },
+    "clock": {
+        "format": "{:%a %b %e  %R}",
+        "interval": 30
+    },
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            "full": 99,
+            "good": 98,
+            "normal": 98,
+            "warning": 20,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-good": "{icon} {capacity}%",
+        "format-full": "{capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "interval": 30
+    },
+    "network": {
+        "interface": "wlp3s0",
+        "format-wifi": "  WiFi-On",
+        "format-disconnected": "睊  Disconnected",
+        "interval": 60
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%  ",
+        "format-bluetooth": " {volume}%  ",
+        "format-muted": "婢 Mute  ",
+        "interval": 60,
+        "format-icons": {
+            "default": [
+                ""
+            ]
+        }
+    }
+}
