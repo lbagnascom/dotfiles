@@ -1,73 +1,64 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 25,
+    "spacing": 0,
     "modules-left": [
         "sway/workspaces",
+        "sway/mode",
         "sway/window"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
-        "network",
         "pulseaudio",
         "battery",
+        "idle_inhibitor",
         "tray"
     ],
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "disable-markup": true,
-        "format": "{index}"
-    },
-    "sway/window": {
-        "format": "{}",
-        "max-length": 150
-    },
-    "tray": {
-        "icon-size": 18,
-        "spacing": 15
-    },
     "clock": {
-        "format": "{:%a %b %e  %R}",
-        "interval": 30
+        "interval": 30,
+        "format": "{:%a, %d %b | %H:%M %p}"
     },
     "battery": {
-        "bat": "BAT0",
         "states": {
-            "full": 99,
-            "good": 98,
-            "normal": 98,
-            "warning": 20,
-            "critical": 20
+            "warning": 30,
+            "critical": 15
         },
+        "interval": 1,
         "format": "{icon} {capacity}%",
-        "format-good": "{icon} {capacity}%",
-        "format-full": "{capacity}%",
+        "format-charging": "⚡ {capacity}%",
         "format-icons": [
             "",
             "",
             "",
             "",
             ""
-        ],
-        "interval": 30
-    },
-    "network": {
-        "interface": "wlp3s0",
-        "format-wifi": "  WiFi-On",
-        "format-disconnected": "睊  Disconnected",
-        "interval": 60
+        ]
     },
     "pulseaudio": {
-        "format": "{icon}  {volume}%  ",
-        "format-bluetooth": " {volume}%  ",
-        "format-muted": "婢 Mute  ",
-        "interval": 60,
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": " {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
         "format-icons": {
+            "headphone": "",
+            "hands-free": "",
             "default": [
+                "",
+                "",
                 ""
             ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
         }
+    },
+    "tray": {
+        "spacing": 10
     }
 }
