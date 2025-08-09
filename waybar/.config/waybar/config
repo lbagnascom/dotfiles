@@ -15,6 +15,7 @@
         "tray"
     ],
     "clock": {
+        "timezone": "America/Argentina/Buenos_Aires",
         "interval": 30,
         "format": "{:%a, %d %b | %H:%M %p}"
     },
