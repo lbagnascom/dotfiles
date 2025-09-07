@@ -1,6 +1,7 @@
 # Config
 
 Requirements
+
 ```
 git
 stow
@@ -12,3 +13,26 @@ fish
 ```
 fc-cache -fv
 ```
+
+## Apps / Packages
+
+### Flatpak
+
+- firefox
+- obsidian
+- discord
+- telegram
+
+### DNF
+
+- ghostty
+- fish
+- scrcpy
+- stow
+- code
+
+### Other
+
+- git, git-gui, gitk
+- docker
+
