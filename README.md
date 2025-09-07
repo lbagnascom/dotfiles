@@ -48,3 +48,9 @@ fc-cache -fv
 TEXMFAUXTREES = /home/lauti/src/plp/texmf,
 ❯ set -Ux TEXMFCNF "$HOME/.config/texlive:"
 ```
+
+4. install texlive packages
+
+```
+sudo dnf install texlive-lastpage texlive-xypic texlive-collection-mathscience texlive-epsf texlive-framed texlive-babel-spanish texlive-beamer texlive-lkproof
+```
