@@ -4,7 +4,7 @@ function git-status-all
             echo "📂 Checking $dir"
             git -C $dir status
     	else
-	    echo "❌ $dir is not a dir"
+	    echo "❌ $dir is not a git dir"
     	end
     end
 end
