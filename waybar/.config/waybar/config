@@ -1,65 +1,41 @@
 {
-    "spacing": 0,
-    "modules-left": [
-        "sway/workspaces",
-        "sway/mode",
-        "sway/window"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "pulseaudio",
-        "battery",
-        "idle_inhibitor",
-        "tray"
-    ],
+    "layer": "top",
+    "position": "top",
+    "height": 16,
+    "spacing": 5,
+
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-right": ["wireplumber", "group/bat", "tray", "clock"],
+
+    "group/bat": {
+        "orientation": "horizontal",
+        "modules": ["battery", "backlight"]
+    },
+
     "clock": {
-        "timezone": "America/Argentina/Buenos_Aires",
-        "interval": 30,
-        "format": "{:%a, %d %b | %H:%M %p}"
+	"timezone": "America/Argentina/Buenos_Aires",
+        "format": "{:%d·%m·%Y | %H:%M}"
     },
+
+    "wireplumber": {
+        "format": "\udb81\udd7e  {volume}%",
+        "max-volume": 100,
+        "scroll-step": 5
+    },
+
     "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "interval": 1,
-        "format": "{icon} {capacity}%",
-        "format-charging": "⚡ {capacity}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+        "bat": "BAT1",
+        "interval": 60,
+        "format": "{icon}  {capacity}%",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
     },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-muted": " {format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol"
+
+    "backlight": {
+        "format": "\udb80\udcdf  {percent}%"
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
+
     "tray": {
-        "spacing": 10
+        "icon-size": 16,
+        "spacing": 16
     }
 }
