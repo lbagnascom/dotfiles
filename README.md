@@ -54,3 +54,18 @@ TEXMFAUXTREES = /home/lauti/src/plp/texmf,
 ```
 sudo dnf install texlive-lastpage texlive-xypic texlive-collection-mathscience texlive-epsf texlive-framed texlive-babel-spanish texlive-beamer texlive-lkproof
 ```
+
+## Ssh config
+```
+mkdir ~/.ssh
+cd ~/.ssh
+touch config
+```
+
+Config file content should be
+```
+Host github.com
+    IdentityFile id_gh
+    IdentitiesOnly yes
+```
+
