@@ -39,8 +39,6 @@
 #usage,
 #clock,
 #net {
-    background-color: @background-alt;
-    border-radius: 3px;
     padding-left: 0.5em;
     padding-right: 0.5em;
     margin-left: 0.3em;

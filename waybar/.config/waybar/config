@@ -5,12 +5,7 @@
     "spacing": 5,
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-    "modules-right": ["wireplumber", "group/bat", "tray", "clock"],
-
-    "group/bat": {
-        "orientation": "horizontal",
-        "modules": ["battery", "backlight"]
-    },
+    "modules-right": ["wireplumber", "battery", "backlight", "tray", "clock"],
 
     "clock": {
 	"timezone": "America/Argentina/Buenos_Aires",
