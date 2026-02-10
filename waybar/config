@@ -5,7 +5,7 @@
     "spacing": 5,
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-    "modules-right": ["wireplumber", "battery", "backlight", "tray", "clock"],
+    "modules-right": ["wireplumber", "tray", "clock"],
 
     "clock": {
 	"timezone": "America/Argentina/Buenos_Aires",

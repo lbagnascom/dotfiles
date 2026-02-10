@@ -50,7 +50,7 @@
   "buffer_font_features": {
     "calt": false,
   },
-  "theme": "VSCode Dark Modern",
+  "theme": "Ayu Dark",
   "tab_size": 2,
   "current_line_highlight": "gutter",
 }

@@ -36,10 +36,10 @@
     };
   };
 
-  home.file.".config/rofi".source = /home/lauti/dotfiles/rofi;
-  home.file.".config/sway".source = /home/lauti/dotfiles/sway;
-  home.file.".config/waybar".source = /home/lauti/dotfiles/waybar;
-  home.file.".config/zed".source = /home/lauti/dotfiles/zed;
+  home.file.".config/rofi".source = ./rofi;
+  home.file.".config/sway".source = ./sway;
+  home.file.".config/waybar".source = ./waybar;
+  home.file.".config/zed".source = ./zed;
   
   home.packages = with pkgs; [
     bat

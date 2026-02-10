@@ -1,7 +1,1 @@
-theme = Everblush
-background = 000000
-shell-integration-features = no-cursor
-cursor-style-blink = false
-window-decoration = server
-font-size = 13
-background-opacity = 0.85
+/nix/store/mbk9vlp54rbm4vizq3mzhqqwscqr9nyz-home-manager-files/.config/ghostty/config
