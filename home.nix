@@ -4,7 +4,7 @@
   home.username = "lauti";
   home.homeDirectory = "/home/lauti";
   home.stateVersion = "25.11";
-  
+
   programs.bash = {
     enable = true;
     shellAliases = {
@@ -41,7 +41,8 @@
   home.file.".config/sway".source = ./sway;
   home.file.".config/waybar".source = ./waybar;
   home.file.".config/zed".source = ./zed;
-  
+  home.file.".ssh".source = ./ssh;
+
   home.packages = with pkgs; [
     bat
   ];
