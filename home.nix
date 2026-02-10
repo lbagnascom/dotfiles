@@ -41,7 +41,7 @@
   home.file.".config/sway".source = ./sway;
   home.file.".config/waybar".source = ./waybar;
   home.file.".config/zed".source = ./zed;
-  home.file.".ssh".source = ./ssh;
+  home.file.".ssh/config".source = ./ssh/config;
 
   home.packages = with pkgs; [
     bat
