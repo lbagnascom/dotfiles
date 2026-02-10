@@ -24,7 +24,7 @@
               users.lauti = import ./home.nix;
               backupFileExtension = "backup";
             };
-          };
+          }
         ];
       };
     };
