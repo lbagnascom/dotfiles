@@ -1,7 +1,0 @@
-theme = Everblush
-background = 000000
-shell-integration-features = no-cursor
-cursor-style-blink = false
-window-decoration = server
-font-size = 13
-background-opacity = 0.85
