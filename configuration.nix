@@ -1,16 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
   
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
-  home-manager.backupFileExtension = "backup";
-  home-manager.users.lauti = import ./home.nix;
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -109,14 +103,14 @@
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
   
-  services.greetd = {                                                      
-    enable = true;                                                         
-    settings = {                                                           
-      default_session = {                                                  
+  services.greetd = {
+    enable = true;
+    settings = { 
+      default_session = {
         command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "greeter";                                                  
-      };                                                                   
-    };                                                                     
+        user = "greeter";
+      };
+    };
   };
 
   # Bluetooth
