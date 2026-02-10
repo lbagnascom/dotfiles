@@ -8,7 +8,8 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch";
+      nrs = "sudo nixos-rebuild switch --flake ~/dotfiles";
+      la = "ls -lA";
     };
   };
 
