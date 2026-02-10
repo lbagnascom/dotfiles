@@ -9,14 +9,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
-  let
-  in {
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
+  outputs = { self, nixpkgs, home-manager, ... }: {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      system = "x86_64.linux";
+      modules = [
           ./configuration.nix
+          ./hardware-configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
@@ -28,5 +26,4 @@
         ];
       };
     };
-  };
 }

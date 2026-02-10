@@ -42,10 +42,8 @@
     variant = "intl";
   };
 
-  # Configure console keymap
   console.keyMap = "us-acentos";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lauti = {
     isNormalUser = true;
     description = "Lautaro";
@@ -53,7 +51,6 @@
     packages = with pkgs; [];
   };
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   programs.firefox.enable = true;
@@ -130,5 +127,5 @@
   services.blueman.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "25.11";
 }
