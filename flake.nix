@@ -12,22 +12,21 @@
   outputs = { self, nixpkgs, home-manager, ... }:
     let 
       mySystem = "x86_64.linux";
-      homeManager = 
-        home-manager.nixosModules.home-manager {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.lauti = import ./home.nix;
-            backupFileExtension = "backup";
-          };
+      homeManager = {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          users.lauti = import ./home.nix;
+          backupFileExtension = "backup";
         };
+      };
     in {
       nixosConfigurations = {
         b360m = nixpkgs.lib.nixosSystem {
           system = mySystem;
           modules = [
             ./hosts/b360m/configuration.nix
-            homeManager 
+            home-manager.nixosModules.home-manager homeManager 
           ];
         };
     
@@ -35,7 +34,7 @@
           system = mySystem;
           modules = [
             ./hosts/thinkpad/configuration.nix
-            homeManager
+            home-manager.nixosModules.home-manager homeManager
           ];
         };
     };
