@@ -1,18 +1,10 @@
 { config, pkgs, ... }:
 
 {
-<<<<<<< HEAD:hosts/thinkpad/configuration.nix
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-  
-=======
   imports = [
     ./hardware-configuration.nix
   ];
-
->>>>>>> origin/master:configuration.nix
+  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
