@@ -53,33 +53,7 @@
      git
      stow
      btop
-
-     # Programs
      firefox
-     zed-editor
-     obsidian
-     spotify
-     discord
-     telegram-desktop
-
-     # Video
-     vlc
-
-     # Image viewer
-     feh
-
-     # Terminal
-     ghostty
-
-     # Launcher
-     rofi
-
-     # DE
-     sway
-     waybar
-     
-     # Notification daemon
-     dunst
   ];
 
   environment.variables = {

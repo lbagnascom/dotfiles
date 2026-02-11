@@ -45,6 +45,33 @@
   home.file.".ssh/config".source = ./ssh/config;
 
   home.packages = with pkgs; [
+    # CLI
     bat
+    
+    # Programs
+    zed-editor
+    obsidian
+    spotify
+    discord
+    telegram-desktop
+
+    # Video
+    vlc
+
+    # Image viewer
+    feh
+
+    # Terminal
+    ghostty
+
+    # Launcher
+    rofi
+
+    # DE
+    sway
+    waybar
+    
+    # Notification daemon
+    dunst
   ];
 }

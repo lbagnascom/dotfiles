@@ -14,9 +14,7 @@
 
   time.timeZone = "America/Argentina/Buenos_Aires";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "es_AR.UTF-8";
     LC_IDENTIFICATION = "es_AR.UTF-8";
@@ -56,32 +54,6 @@
      stow
      btop
      firefox
-
-     # Programs
-     zed-editor
-     obsidian
-     spotify
-     discord
-     telegram-desktop
-
-     # Video
-     vlc
-
-     # Image viewer
-     feh
-
-     # Terminal
-     ghostty
-
-     # Launcher
-     rofi
-
-     # DE
-     sway
-     waybar
-
-     # Notification daemon
-     dunst
   ];
 
   environment.variables = {
@@ -102,22 +74,22 @@
   programs.xfconf.enable = true;
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
-
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
+  
+  services.greetd = {                                                      
+    enable = true;                                                         
+    settings = {                                                           
+      default_session = {                                                  
         command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "greeter";
-      };
-    };
+        user = "greeter";                                                  
+      };                                                                   
+    };                                                                     
   };
 
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-  };
+  }; 
   services.blueman.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
