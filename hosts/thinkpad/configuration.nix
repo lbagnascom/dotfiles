@@ -1,11 +1,18 @@
 { config, pkgs, ... }:
 
 {
+<<<<<<< HEAD:hosts/thinkpad/configuration.nix
   imports =
     [
       ./hardware-configuration.nix
     ];
   
+=======
+  imports = [
+    ./hardware-configuration.nix
+  ];
+
+>>>>>>> origin/master:configuration.nix
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -56,9 +63,9 @@
      git
      stow
      btop
+     firefox
 
      # Programs
-     firefox
      zed-editor
      obsidian
      spotify
@@ -80,7 +87,7 @@
      # DE
      sway
      waybar
-     
+
      # Notification daemon
      dunst
   ];
@@ -103,22 +110,22 @@
   programs.xfconf.enable = true;
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
-  
-  services.greetd = {                                                      
-    enable = true;                                                         
-    settings = {                                                           
-      default_session = {                                                  
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
         command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "greeter";                                                  
-      };                                                                   
-    };                                                                     
+        user = "greeter";
+      };
+    };
   };
 
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-  }; 
+  };
   services.blueman.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

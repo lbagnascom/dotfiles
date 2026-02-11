@@ -1,40 +1,6 @@
 # Config
 
-Requirements
-
-```
-git
-stow
-fish
-```
-
-## To install Fonts
-
-```
-fc-cache -fv
-```
-
-## Apps / Packages
-
-### Flatpak
-
-- firefox
-- obsidian
-- discord
-- telegram
-
-### DNF
-
-- ghostty
-- fish
-- scrcpy
-- stow
-- code
-
-### Other
-
-- git, git-gui, gitk
-- docker
+TODO now with NixOS
 
 ## Setup texlive plp
 
@@ -68,4 +34,3 @@ Host github.com
     IdentityFile id_gh
     IdentitiesOnly yes
 ```
-
