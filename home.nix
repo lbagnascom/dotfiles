@@ -44,6 +44,12 @@
   home.file.".config/zed".source = ./zed;
   home.file.".ssh/config".source = ./ssh/config;
 
+  home.pointerCursor = {
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
+    size = 24;
+  };
+
   home.packages = with pkgs; [
     # CLI
     bat
