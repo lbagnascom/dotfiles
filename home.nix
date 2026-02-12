@@ -79,5 +79,13 @@
     
     # Notification daemon
     dunst
+
+    # Languages
+    crystal
+    crystalline
+    swi-prolog
+    ghcid
+    haskellPackages.haskell-language-server
+    cabal-install
   ];
 }
