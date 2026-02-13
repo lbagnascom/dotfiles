@@ -84,7 +84,7 @@
     crystal
     crystalline
     swi-prolog
-    ghcid
+    ghc
     haskellPackages.haskell-language-server
     cabal-install
   ];
