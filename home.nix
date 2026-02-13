@@ -24,8 +24,18 @@
       window-decoration = "server";
       font-size = 13;
       background-opacity = 0.85;
+      shell-integration = "fish";
+      command = "${pkgs.fish}/bin/fish";
     };
   };
+
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+    
+  }
 
   programs.git = {
     enable = true;
@@ -51,6 +61,9 @@
   };
 
   home.packages = with pkgs; [
+    # Shell
+    fish
+
     # CLI
     bat
     
