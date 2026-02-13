@@ -12,7 +12,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... }:
     let 
-      mySystem = "x86_64.linux";
+      system = "x86_64.linux";
       homeManager = {
         home-manager = {
           useGlobalPkgs = true;
@@ -24,7 +24,7 @@
     in {
       nixosConfigurations = {
         b360m = nixpkgs.lib.nixosSystem {
-          system = mySystem;
+          inherit system;
           modules = [
             ./hosts/b360m/configuration.nix
             home-manager.nixosModules.home-manager homeManager 
@@ -32,7 +32,7 @@
         };
     
         thinkpad = nixpkgs.lib.nixosSystem {
-          system = mySystem;
+          inherit system;
           modules = [
             ./hosts/thinkpad/configuration.nix
             home-manager.nixosModules.home-manager homeManager

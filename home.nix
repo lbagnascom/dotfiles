@@ -65,9 +65,6 @@
   home.packages = with pkgs; [
     # Shell
     fish
-
-    # CLI
-    bat
     
     # Programs
     zed-editor
