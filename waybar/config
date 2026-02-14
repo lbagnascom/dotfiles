@@ -7,8 +7,13 @@
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-right": ["wireplumber", "tray", "clock"],
 
+    "sway/window" : {
+        "format": "{app_id}",
+        "tooltip": false
+    },
+
     "clock": {
-	"timezone": "America/Argentina/Buenos_Aires",
+	      "timezone": "America/Argentina/Buenos_Aires",
         "format": "{:%d·%m·%Y | %H:%M}"
     },
 
