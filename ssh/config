@@ -1,3 +1,7 @@
 Host github.com
 	IdentityFile ~/.ssh/id_gh
 	IdentitiesOnly yes
+
+Host git.exactas.uba.ar
+	IdentityFile ~/.ssh/id_gitlab_exactas
+	IdentitiesOnly yes
