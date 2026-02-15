@@ -2,6 +2,7 @@
 
 let
   texliveBundle = pkgs.texliveBasic.withPackages (ps: [
+    ps.latexmk
     ps.xypic ps.lastpage
     ps.collection-mathscience
     ps.epsf ps.framed
