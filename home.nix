@@ -63,7 +63,7 @@ in
   home.file.".config/texlive".source = ./texlive;
 
   home.sessionVariables = {
-    TEXMFCNF = "$HOME/.config/texlive";
+    TEXMFCNF = "$HOME/.config/texlive:";
   };
 
   home.pointerCursor = {
