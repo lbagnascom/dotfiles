@@ -1,5 +1,14 @@
 { config, pkgs, ... }:
 
+let
+  texliveBundle = pkgs.texliveBasic.withPackages (ps: [
+    ps.xypic ps.lastpage
+    ps.collection-mathscience
+    ps.epsf ps.framed
+    ps.babel-spanish
+    ps.beamer ps.lkproof
+  ]);
+in
 {
   home.username = "lauti";
   home.homeDirectory = "/home/lauti";
@@ -7,11 +16,6 @@
 
   programs.bash = {
     enable = true;
-    shellAliases = {
-      nrs-desktop = "sudo nixos-rebuild switch --flake ~/dotfiles#b360m";
-      nrs-laptop = "sudo nixos-rebuild switch --flake ~/dotfiles#thinkpad";
-      la = "ls -lA";
-    };
   };
 
   programs.ghostty = {
@@ -55,6 +59,11 @@
   home.file.".config/waybar".source = ./waybar;
   home.file.".config/zed".source = ./zed;
   home.file.".ssh/config".source = ./ssh/config;
+  home.file.".config/texlive".source = ./texlive;
+
+  home.sessionVariables = {
+    TEXMFCNF = "$HOME/.config/texlive";
+  };
 
   home.pointerCursor = {
     name = "Adwaita";
@@ -99,5 +108,8 @@
     ghc
     haskellPackages.haskell-language-server
     cabal-install
+
+    # Texlive
+    texliveBundle
   ];
 }
