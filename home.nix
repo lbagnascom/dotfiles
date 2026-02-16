@@ -60,7 +60,6 @@ in
   home.file.".config/waybar".source = ./waybar;
   home.file.".config/zed".source = ./zed;
   home.file.".ssh/config".source = ./ssh/config;
-  home.file.".config/texlive".source = ./texlive;
 
   home.sessionVariables = {
     TEXMFAUXTREES = "/home/lauti/plp/texmf,";
