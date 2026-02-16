@@ -7,6 +7,10 @@
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-right": ["wireplumber", "tray", "clock"],
 
+    "sway/workspaces": {
+        "disable-scroll": true,
+    },
+
     "sway/window" : {
         "format": "{app_id}",
         "tooltip": false
