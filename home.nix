@@ -63,7 +63,7 @@ in
   home.file.".config/texlive".source = ./texlive;
 
   home.sessionVariables = {
-    TEXMFCNF = "$HOME/.config/texlive";
+    TEXMFAUXTREES = "/home/lauti/plp/texmf,";
   };
 
   home.pointerCursor = {
@@ -75,7 +75,7 @@ in
   home.packages = with pkgs; [
     # Shell
     fish
-    
+
     # Programs
     zed-editor
     obsidian
@@ -98,7 +98,7 @@ in
     # DE
     sway
     waybar
-    
+
     # Notification daemon
     dunst
 
