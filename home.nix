@@ -98,6 +98,12 @@ in
     sway
     waybar
 
+    # Screenshots
+    grim
+    slurp
+    swappy
+    wl-clipboard
+
     # Notification daemon
     dunst
 
