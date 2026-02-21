@@ -3,11 +3,14 @@
 let
   texliveBundle = pkgs.texliveBasic.withPackages (ps: [
     ps.latexmk
-    ps.xypic ps.lastpage
+    ps.xypic
+    ps.lastpage
     ps.collection-mathscience
-    ps.epsf ps.framed
+    ps.epsf
+    ps.framed
     ps.babel-spanish
-    ps.beamer ps.lkproof
+    ps.beamer
+    ps.lkproof
   ]);
 in
 {
@@ -40,7 +43,10 @@ in
       set fish_greeting # Disable greeting
     '';
     plugins = [
-      { name = "tide"; src = pkgs.fishPlugins.tide.src; }
+      {
+        name = "tide";
+        src = pkgs.fishPlugins.tide.src;
+      }
     ];
   };
 
@@ -48,7 +54,7 @@ in
     enable = true;
     settings = {
       user = {
-        name  = "Lautaro Bagnasco Muguillo";
+        name = "Lautaro Bagnasco Muguillo";
         email = "tatibagnasco@gmail.com";
       };
       init.defaultBranch = "main";
@@ -114,6 +120,8 @@ in
     ghc
     haskellPackages.haskell-language-server
     cabal-install
+    nil
+    nixd
 
     # Texlive
     texliveBundle
