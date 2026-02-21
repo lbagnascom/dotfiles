@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
   ];
-  
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -58,6 +58,7 @@
 
   environment.variables = {
     GTK_THEME = "Adwaita:dark";
+    WLR_RENDER_NO_EXPLICIT_SYNC = 1;
   };
 
   fonts.packages = with pkgs; [
@@ -74,22 +75,22 @@
   programs.xfconf.enable = true;
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
-  
-  services.greetd = {                                                      
-    enable = true;                                                         
-    settings = {                                                           
-      default_session = {                                                  
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
         command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd sway";
-        user = "greeter";                                                  
-      };                                                                   
-    };                                                                     
+        user = "greeter";
+      };
+    };
   };
 
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-  }; 
+  };
   services.blueman.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
