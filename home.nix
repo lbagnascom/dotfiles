@@ -31,7 +31,6 @@ in
       cursor-style-blink = false;
       window-decoration = "server";
       font-size = 13;
-      background-opacity = 0.85;
       shell-integration = "fish";
       command = "${pkgs.fish}/bin/fish --login --interactive";
     };

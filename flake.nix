@@ -10,34 +10,45 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
-    let 
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
+    let
       system = "x86_64.linux";
-      homeManager = {
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          users.lauti = import ./home.nix;
-          backupFileExtension = "backup";
-        };
-     };
-    in {
+      homeManagerConfig = {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.users.lauti = import ./home.nix;
+        home-manager.backupFileExtension = "backup";
+      };
+    in
+    {
       nixosConfigurations = {
         b360m = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
+            ./common/configuration.nix
             ./hosts/b360m/configuration.nix
-            home-manager.nixosModules.home-manager homeManager 
+            ./hosts/b360m/hardware-configuration.nix
+            home-manager.nixosModules.home-manager
+            homeManagerConfig
           ];
         };
-    
+
         thinkpad = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
+            ./common/configuration.nix
             ./hosts/thinkpad/configuration.nix
-            home-manager.nixosModules.home-manager homeManager
+            ./hosts/thinkpad/hardware-configuration.nix
+            home-manager.nixosModules.home-manager
+            homeManagerConfig
           ];
         };
+      };
     };
-  };
 }
