@@ -86,6 +86,7 @@ in
     spotify
     discord
     telegram-desktop
+    xournalpp
 
     # Video
     vlc
