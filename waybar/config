@@ -1,45 +1,89 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 16,
-    "spacing": 5,
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "spacing": 5,
 
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-    "modules-right": ["wireplumber", "tray", "clock"],
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "wireplumber", "battery", "idle_inhibitor", "network", "bluetooth", "tray"
+  ],
 
-    "sway/workspaces": {
-        "disable-scroll": true,
-    },
-
-    "sway/window" : {
-        "format": "{app_id}",
-        "tooltip": false
-    },
-
-    "clock": {
-	      "timezone": "America/Argentina/Buenos_Aires",
-        "format": "{:%d·%m·%Y | %H:%M}"
-    },
-
-    "wireplumber": {
-        "format": "\udb81\udd7e  {volume}%",
-        "max-volume": 100,
-        "scroll-step": 5
-    },
-
-    "battery": {
-        "bat": "BAT0",
-        "interval": 60,
-        "format": "{icon}  {capacity}%",
-        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
-    },
-
-    "backlight": {
-        "format": "\udb80\udcdf  {percent}%"
-    },
-
-    "tray": {
-        "icon-size": 16,
-        "spacing": 16
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": "",
+      "focused": "󱓻",
     }
+  },
+
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "format": "{capacity}% {icon}",
+    "format-discharging": "{icon}",
+    "format-charging": "{icon}",
+    "format-plugged": "",
+    "format-icons": {
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
+    "format-full": "󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 60,
+    "states": {
+      "warning": 20,
+      "critical": 10,
+    },
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-off": "󰂲",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "format-no-controller": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+  },
+
+  "clock": {
+    "timezone": "America/Argentina/Buenos_Aires",
+    "format": "{:%d·%m·%Y | %H:%M}",
+  },
+
+  "wireplumber": {
+    "format": "\udb81\udd7e  {volume}%",
+    "max-volume": 100,
+    "scroll-step": 5,
+  },
+
+  "backlight": {
+    "format": "\udb80\udcdf  {percent}%",
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 16,
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "\udb80\udd76",
+        "deactivated": "\udb83\udfaa"
+    }
+  }
 }
