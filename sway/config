@@ -213,7 +213,7 @@ bindsym Print exec grim - | swappy -f -
 bindsym Print+Shift exec grim -g "$(slurp)" - | swappy -f -
 ### Start default apps
 exec swaymsg "workspace $ws_firefox; exec firefox"
-exec swaymsg "workspace $ws_terminal; exec $term"
-exec swaymsg "workspace $ws_editor; exec zeditor"
+# exec swaymsg "workspace $ws_terminal; exec $term"
+# exec swaymsg "workspace $ws_editor; exec zeditor"
 
 include /etc/sway/config.d/*

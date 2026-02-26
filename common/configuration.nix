@@ -6,6 +6,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.networkmanager.enable = true;
+  programs.nm-applet.enable = true;
 
   time.timeZone = "America/Argentina/Buenos_Aires";
 
@@ -60,6 +61,10 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.monaspace
+    nerd-fonts.adwaita-mono
+    nerd-fonts.iosevka
   ];
 
   programs.sway = {

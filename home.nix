@@ -121,7 +121,6 @@ in
     cabal-install
     nil
     nixd
-
     # Texlive
     texliveBundle
   ];
