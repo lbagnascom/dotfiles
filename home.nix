@@ -86,6 +86,7 @@ in
     discord
     telegram-desktop
     xournalpp
+    qbittorrent
 
     # Video
     vlc
@@ -113,14 +114,13 @@ in
     dunst
 
     # Languages
-    crystal
-    crystalline
     swi-prolog
     ghc
     haskellPackages.haskell-language-server
     cabal-install
     nil
     nixd
+
     # Texlive
     texliveBundle
   ];
