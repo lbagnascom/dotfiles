@@ -87,9 +87,13 @@ in
     telegram-desktop
     xournalpp
     qbittorrent
+    unzip
 
     # Video
     vlc
+
+    # Audio
+    pavucontrol
 
     # Image viewer
     feh
