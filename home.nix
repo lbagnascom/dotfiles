@@ -91,6 +91,7 @@ in
 
     # Video
     vlc
+    nwg-displays
 
     # Audio
     pavucontrol
