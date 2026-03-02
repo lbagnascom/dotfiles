@@ -60,6 +60,11 @@ in
     };
   };
 
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   home.file.".config/rofi".source = ./rofi;
   home.file.".config/sway".source = ./sway;
   home.file.".config/waybar".source = ./waybar;

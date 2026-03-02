@@ -32,9 +32,9 @@
 
   "battery": {
     "bat": "BAT0",
-    "format": "{capacity}% {icon}",
-    "format-discharging": "{icon}",
-    "format-charging": "{icon}",
+    "format": "{icon} {capacity}%",
+    "format-discharging": "{icon} {capacity}%",
+    "format-charging": "{icon} {capacity}%",
     "format-plugged": "",
     "format-icons": {
       "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
@@ -65,13 +65,13 @@
   },
 
   "wireplumber": {
-    "format": "\udb81\udd7e  {volume}%",
+    "format": "\udb81\udd7e {volume}%",
     "max-volume": 100,
     "scroll-step": 5,
   },
 
   "backlight": {
-    "format": "\udb80\udcdf  {percent}%",
+    "format": "\udb80\udcdf {percent}%",
   },
 
   "tray": {
