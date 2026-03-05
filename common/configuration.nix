@@ -78,6 +78,9 @@
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
 
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.login.enableGnomeKeyring = true;
+
   services.greetd = {
     enable = true;
     settings = {
@@ -93,6 +96,7 @@
     enable = true;
     powerOnBoot = true;
   };
+
   services.blueman.enable = true;
 
   nix.settings.experimental-features = [
