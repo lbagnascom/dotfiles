@@ -93,6 +93,7 @@ in
     xournalpp
     qbittorrent
     unzip
+    anki-bin
 
     # Video
     vlc
