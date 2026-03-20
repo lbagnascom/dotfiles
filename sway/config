@@ -27,6 +27,11 @@ output * bg ~/Pictures/wallpaper.jpg fill
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
+input "type:keyboard" {
+    xkb_layout us
+    xkb_variant altgr-intl
+}
+
 input "type:touchpad" {
     tap enabled
     tap_button_map lrm

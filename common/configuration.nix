@@ -27,10 +27,10 @@
   # TODO should configure keyrepeat here? should this be enabled?
   services.xserver.xkb = {
     layout = "us";
-    variant = "intl";
+    variant = "altgr-intl";
   };
 
-  console.keyMap = "us-acentos";
+  console.useXkbConfig = true;
 
   users.users.lauti = {
     isNormalUser = true;
