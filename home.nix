@@ -125,10 +125,6 @@ in
     dunst
 
     # Languages
-    swi-prolog
-    ghc
-    haskellPackages.haskell-language-server
-    cabal-install
     nil
     nixd
 
