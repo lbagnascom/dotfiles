@@ -11,6 +11,7 @@ let
     ps.babel-spanish
     ps.beamer
     ps.lkproof
+    ps.exam
   ]);
 in
 {
@@ -94,6 +95,7 @@ in
     qbittorrent
     unzip
     anki-bin
+    zathura
 
     # Video
     vlc
