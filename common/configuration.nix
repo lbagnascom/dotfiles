@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # Bootloader.
@@ -108,10 +108,21 @@
   # Docker
   virtualisation.docker = {
     enable = true;
+    enableOnBoot = false;
     rootless = {
       enable = true;
       setSocketVariable = true;
     };
+  };
+
+  # Disable rootless docker start on boot
+  systemd.user.services.docker = {
+    wantedBy = lib.mkForce [ ];
+  };
+
+  # Disable docker.socket start on boot
+  systemd.sockets.docker = {
+    wantedBy = lib.mkForce [ ];
   };
 
   nix.settings.experimental-features = [

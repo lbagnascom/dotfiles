@@ -42,6 +42,9 @@ in
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
     '';
+    shellAliases = {
+      start-docker = "sudo systemctl start docker.socket && sudo systemctl start docker && systemctl --user start docker";
+    };
     plugins = [
       {
         name = "tide";
