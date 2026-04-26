@@ -93,7 +93,7 @@ in
     obsidian
     spotify
     discord
-    # telegram-desktop
+    telegram-desktop
     xournalpp
     qbittorrent
     unzip
