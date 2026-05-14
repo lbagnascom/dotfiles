@@ -99,6 +99,7 @@ in
     unzip
     anki-bin
     zathura
+    vscode
 
     # Video
     vlc
