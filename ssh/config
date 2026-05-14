@@ -5,3 +5,7 @@ Host github.com
 Host git.exactas.uba.ar
 	IdentityFile ~/.ssh/id_gitlab_exactas
 	IdentitiesOnly yes
+
+Host codeberg.org
+	IdentityFile ~/.ssh/id_codeberg
+	IdentitiesOnly yes
