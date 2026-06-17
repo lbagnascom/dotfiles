@@ -100,6 +100,8 @@ in
     anki-bin
     zathura
     vscode
+    devenv
+    android-studio
 
     # Video
     vlc
@@ -137,4 +139,5 @@ in
     # Texlive
     texliveBundle
   ];
+
 }
