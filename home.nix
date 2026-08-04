@@ -17,7 +17,7 @@ in
 {
   home.username = "lauti";
   home.homeDirectory = "/home/lauti";
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   programs.bash = {
     enable = true;

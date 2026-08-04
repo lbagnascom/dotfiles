@@ -45,7 +45,6 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.firefox.enable = true;
-  programs.adb.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
@@ -130,5 +129,5 @@
     "nix-command"
     "flakes"
   ];
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 }
