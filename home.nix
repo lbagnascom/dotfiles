@@ -84,6 +84,15 @@ in
     size = 24;
   };
 
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode-fhs;
+    extensions = with pkgs.vscode-extensions; [
+      ms-vscode.cpptools-extension-pack
+      mechatroner.rainbow-csv
+    ];
+  };
+
   home.packages = with pkgs; [
     # Shell
     fish
@@ -99,7 +108,6 @@ in
     unzip
     anki-bin
     zathura
-    vscode
     devenv
     android-studio
 
