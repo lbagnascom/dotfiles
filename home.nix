@@ -51,7 +51,7 @@ in
 
   programs.starship = {
     enable = true;
-    settings = { };
+    enableFishIntegration = true;
   };
 
   programs.git = {
@@ -73,6 +73,7 @@ in
   home.file.".config/rofi".source = ./rofi;
   home.file.".config/sway".source = ./sway;
   home.file.".config/waybar".source = ./waybar;
+  home.file.".config/starship".source = ./starship;
   home.file.".ssh/config".source = ./ssh/config;
 
   home.sessionVariables = {
