@@ -18,7 +18,7 @@
       ...
     }:
     let
-      system = "x86_64.linux";
+      system = "x86_64-linux";
       homeManagerConfig = {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
