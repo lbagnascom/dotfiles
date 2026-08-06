@@ -73,7 +73,7 @@ in
   home.file.".config/rofi".source = ./rofi;
   home.file.".config/sway".source = ./sway;
   home.file.".config/waybar".source = ./waybar;
-  home.file.".config/starship".source = ./starship;
+  home.file.".config/starship.toml".source = ./starship/config.toml;
   home.file.".ssh/config".source = ./ssh/config;
 
   home.sessionVariables = {
