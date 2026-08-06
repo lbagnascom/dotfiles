@@ -45,12 +45,13 @@ in
     shellAliases = {
       start-docker = "sudo systemctl start docker.socket && sudo systemctl start docker && systemctl --user start docker";
     };
-    plugins = [
-      {
-        name = "tide";
-        src = pkgs.fishPlugins.tide.src;
-      }
-    ];
+  };
+
+  programs.home-manager.enable = true;
+
+  programs.starship = {
+    enable = true;
+    settings = { };
   };
 
   programs.git = {
