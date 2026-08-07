@@ -89,7 +89,7 @@ in
   programs.vscode = {
     enable = true;
     package = pkgs.vscode-fhs;
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       ms-vscode.cpptools-extension-pack
       mechatroner.rainbow-csv
     ];
@@ -112,6 +112,8 @@ in
     zathura
     devenv
     android-studio
+    chromium
+    file-roller
 
     # Video
     vlc
