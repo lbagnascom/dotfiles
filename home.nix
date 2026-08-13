@@ -63,7 +63,7 @@
   home.file.".ssh/config".source = ./ssh/config;
 
   home.sessionVariables = {
-    TEXMFAUXTREES = "/home/lauti/plp/texmf,";
+    TEXMFAUXTREES = "/home/lauti/plp/catedra/texmf,";
   };
 
   home.pointerCursor = {
