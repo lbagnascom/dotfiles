@@ -1,19 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  texliveBundle = pkgs.texliveBasic.withPackages (ps: [
-    ps.latexmk
-    ps.xypic
-    ps.lastpage
-    ps.collection-mathscience
-    ps.epsf
-    ps.framed
-    ps.babel-spanish
-    ps.beamer
-    ps.lkproof
-    ps.exam
-  ]);
-in
 {
   home.username = "lauti";
   home.homeDirectory = "/home/lauti";
@@ -148,9 +134,6 @@ in
     # Languages
     nil
     nixd
-
-    # Texlive
-    texliveBundle
   ];
 
 }
