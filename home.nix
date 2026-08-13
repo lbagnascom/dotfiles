@@ -114,6 +114,7 @@ in
     android-studio
     chromium
     file-roller
+    zotero
 
     # Video
     vlc
