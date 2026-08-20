@@ -119,7 +119,6 @@
     rofi
 
     # DE
-    sway
     waybar
 
     # Screenshots
