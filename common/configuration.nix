@@ -23,8 +23,6 @@
     LC_TIME = "es_AR.UTF-8";
   };
 
-  # Configure keymap in X11
-  # TODO should configure keyrepeat here? should this be enabled?
   services.xserver.xkb = {
     layout = "us";
     variant = "altgr-intl";
