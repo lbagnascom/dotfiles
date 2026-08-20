@@ -70,10 +70,6 @@
     "scroll-step": 5,
   },
 
-  "backlight": {
-    "format": "\udb80\udcdf {percent}%",
-  },
-
   "tray": {
     "icon-size": 16,
     "spacing": 16,
