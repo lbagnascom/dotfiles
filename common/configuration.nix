@@ -52,7 +52,7 @@
     git
     stow
     btop
-    firefox
+    polkit_gnome
   ];
 
   environment.variables = {
