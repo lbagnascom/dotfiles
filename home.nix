@@ -127,6 +127,10 @@
     swappy
     wl-clipboard
 
+    # Screen lock
+    swaylock-effects
+    swayidle
+
     # Notification daemon
     dunst
 
