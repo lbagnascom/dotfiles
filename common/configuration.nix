@@ -57,6 +57,7 @@
 
   environment.variables = {
     GTK_THEME = "Adwaita:dark";
+    QT_QPA_PLATFORM = "wayland;xcb";
   };
 
   fonts.packages = with pkgs; [
