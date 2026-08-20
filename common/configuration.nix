@@ -56,6 +56,7 @@
   environment.variables = {
     GTK_THEME = "Adwaita:dark";
     QT_QPA_PLATFORM = "wayland;xcb";
+    MOZ_ENABLE_WAYLAND = 1;
   };
 
   fonts.packages = with pkgs; [
@@ -73,7 +74,17 @@
 
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
+    wlr = {
+      enable = true;
+      settings = {
+        screencast = {
+          chooser_type = "dmenu";
+          chooser_cmd = "${pkgs.rofi}/bin/rofi -dmenu";
+        };
+      };
+    };
+    # Is extraPortals important?
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   # Thunar
