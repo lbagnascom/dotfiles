@@ -56,6 +56,15 @@
     nix-direnv.enable = true;
   };
 
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style = {
+      name = "adwaita-dark";
+      package = pkgs.adwaita-qt;
+    };
+  };
+
   home.file.".config/rofi".source = ./rofi;
   home.file.".config/sway".source = ./sway;
   home.file.".config/waybar".source = ./waybar;
