@@ -73,6 +73,11 @@
     wrapperFeatures.gtk = true;
   };
 
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+  };
+
   # Thunar
   programs.thunar = {
     enable = true;
