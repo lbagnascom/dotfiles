@@ -108,6 +108,7 @@
 
     # Audio
     pavucontrol
+    playerctl
 
     # Image viewer
     feh
