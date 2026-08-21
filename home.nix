@@ -9,17 +9,37 @@
     enable = true;
   };
 
-  programs.ghostty = {
+  programs.foot = {
     enable = true;
     settings = {
-      theme = "Everblush";
-      background = "000000";
-      shell-integration-features = "no-cursor";
-      cursor-style-blink = false;
-      window-decoration = "server";
-      font-size = 13;
-      shell-integration = "fish";
-      command = "${pkgs.fish}/bin/fish --login --interactive";
+      main = {
+        shell = "${pkgs.fish}/bin/fish --login --interactive";
+        font = "monospace:size=13";
+      };
+      cursor = {
+        blink = false;
+        style = "block";
+      };
+      colors-dark = {
+        background = "000000";
+        foreground = "dadada";
+        regular0 = "232a2d";
+        regular1 = "e57474";
+        regular2 = "8ccf7e";
+        regular3 = "e5c76b";
+        regular4 = "67b0e8";
+        regular5 = "c47fd5";
+        regular6 = "6cbfbf";
+        regular7 = "b3b9b8";
+        bright0 = "2d3437";
+        bright1 = "ef7e7e";
+        bright2 = "96d988";
+        bright3 = "f4d67a";
+        bright4 = "71baf2";
+        bright5 = "ce89df";
+        bright6 = "67cbe7";
+        bright7 = "bdc3c2";
+      };
     };
   };
 
@@ -121,9 +141,6 @@
 
     # Image viewer
     feh
-
-    # Terminal
-    ghostty
 
     # Launcher
     rofi

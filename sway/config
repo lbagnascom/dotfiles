@@ -7,7 +7,7 @@ set $down j
 set $up k
 set $right l
 # Terminal emulator
-set $term ghostty
+set $term foot
 
 # Application launcher
 set $rofi_cmd rofi -terminal '$term'
