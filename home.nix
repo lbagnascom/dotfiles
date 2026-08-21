@@ -99,6 +99,7 @@
     name = "Adwaita";
     package = pkgs.adwaita-icon-theme;
     size = 24;
+    x11.defaultCursor = "Adwaita";
   };
 
   programs.vscode = {
@@ -108,6 +109,13 @@
       ms-vscode.cpptools-extension-pack
       mechatroner.rainbow-csv
     ];
+  };
+
+  programs.swaylock = {
+    enable = true;
+    settings = {
+      color = "000000";
+    };
   };
 
   home.packages = with pkgs; [
@@ -152,7 +160,6 @@
     wl-clipboard
 
     # Screen lock
-    swaylock-effects
     swayidle
 
     # Notification daemon
