@@ -111,9 +111,6 @@
   };
 
   home.packages = with pkgs; [
-    # Shell
-    fish
-
     # Programs
     zed-editor
     obsidian
