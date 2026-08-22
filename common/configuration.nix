@@ -28,7 +28,12 @@
     variant = "altgr-intl";
   };
 
-  console.useXkbConfig = true;
+  console = {
+    useXkbConfig = true;
+    font = "ter-v20n";
+    packages = [ pkgs.terminus_font ];
+    earlySetup = true;
+  };
 
   users.users.lauti = {
     isNormalUser = true;
@@ -54,6 +59,8 @@
   ];
 
   environment.variables = {
+    XCURSOR_THEME = "Adwaita";
+    XCURSOR_SIZE = "24";
     GTK_THEME = "Adwaita:dark";
     QT_QPA_PLATFORM = "wayland;xcb";
     MOZ_ENABLE_WAYLAND = 1;
@@ -100,12 +107,15 @@
   services.tumbler.enable = true; # Thumbnail support for images
 
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.sddm.enableGnomeKeyring = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
 
-  services.displayManager.sddm = {
+  services.greetd = {
     enable = true;
-    wayland = {
-      enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd sway";
+        user = "greeter";
+      };
     };
   };
 

@@ -96,10 +96,12 @@
   };
 
   home.pointerCursor = {
-    name = "Adwaita";
+    enable = true;
+    gtk.enable = true;
+    x11.enable = true;
     package = pkgs.adwaita-icon-theme;
+    name = "Adwaita";
     size = 24;
-    x11.defaultCursor = "Adwaita";
   };
 
   programs.vscode = {
