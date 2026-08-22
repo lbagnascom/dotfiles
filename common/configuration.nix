@@ -32,7 +32,6 @@
     useXkbConfig = true;
     font = "ter-v20n";
     packages = [ pkgs.terminus_font ];
-    earlySetup = true;
   };
 
   users.users.lauti = {
@@ -136,7 +135,7 @@
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = true;
+    powerOnBoot = false;
   };
 
   services.blueman.enable = true;
