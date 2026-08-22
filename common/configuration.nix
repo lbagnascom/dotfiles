@@ -32,6 +32,7 @@
     useXkbConfig = true;
     font = "ter-v20n";
     packages = [ pkgs.terminus_font ];
+    earlySetup = true;
   };
 
   users.users.lauti = {
