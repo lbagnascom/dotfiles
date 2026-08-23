@@ -7,5 +7,7 @@
     WLR_RENDER_NO_EXPLICIT_SYNC = 1;
   };
 
-  nix.settings.access-tokens = [ "!include /etc/nixos/github-token" ];
+  nix.extraOptions = ''
+    !include /etc/nixos/github-token
+  '';
 }
