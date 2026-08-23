@@ -33,6 +33,8 @@
     font = "ter-v22n";
     packages = [ pkgs.terminus_font ];
     earlySetup = true;
+    font = "ter-v22n";
+    packages = with pkgs; [ terminus_font ];
   };
 
   users.users.lauti = {
