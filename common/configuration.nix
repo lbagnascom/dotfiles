@@ -30,8 +30,6 @@
 
   console = {
     useXkbConfig = true;
-    font = "ter-v22n";
-    packages = [ pkgs.terminus_font ];
     earlySetup = true;
     font = "ter-v22n";
     packages = with pkgs; [ terminus_font ];
@@ -114,6 +112,7 @@
 
   services.greetd = {
     enable = true;
+    useTextGreeter = true;
     settings = {
       default_session = {
         command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd sway";
