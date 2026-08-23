@@ -30,7 +30,7 @@
 
   console = {
     useXkbConfig = true;
-    font = "ter-v20n";
+    font = "ter-v22n";
     packages = [ pkgs.terminus_font ];
     earlySetup = true;
   };
@@ -72,6 +72,8 @@
     nerd-fonts.monaspace
     nerd-fonts.adwaita-mono
     nerd-fonts.iosevka
+    nerd-fonts.symbols-only
+    symbola
   ];
 
   programs.sway = {
@@ -90,7 +92,6 @@
         };
       };
     };
-    # Is extraPortals important?
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 

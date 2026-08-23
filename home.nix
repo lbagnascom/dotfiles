@@ -120,7 +120,15 @@
     };
   };
 
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacs-pgtk;
+  };
+
   home.packages = with pkgs; [
+    ripgrep
+    fd
+
     # Programs
     zed-editor
     obsidian
