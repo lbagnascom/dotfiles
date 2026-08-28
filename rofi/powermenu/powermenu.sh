@@ -73,7 +73,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		swaylock
+		swaylock -c 1E2127
         ;;
     $suspend)
 		run_cmd --suspend

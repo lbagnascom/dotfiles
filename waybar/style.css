@@ -1,9 +1,12 @@
-@define-color foreground #eeeeee;
-@define-color foreground-inactive #aaaaaa;
-@define-color background #000000;
+@define-color background      #000000;
+@define-color background-alt  #282B31;
+@define-color foreground      #FFFFFF;
+@define-color selected        #61AFEF;
+@define-color active          #98C379;
+@define-color urgent          #E06C75;
 
 * {
-  font-family: JetBrainsMono Nerd Font;
+  font-family: "JetBrainsMono Nerd Font";
   font-size: 17px;
   padding: 0;
   margin: 0;
@@ -21,11 +24,15 @@
 }
 
 #workspaces button.empty {
-  color: @foreground-inactive;
+  color: @background-alt;
+}
+
+#workspaces button.focused {
+  color: @selected;
 }
 
 #workspaces button.urgent {
-  color: #b54f4f;
+  color: @urgent;
 }
 
 #memory,

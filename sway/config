@@ -17,7 +17,7 @@ output * bg ~/Pictures/wallpaper.jpg fill
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 300 'swaylock -f' \
+    timeout 300 'swaylock -f -c 1E2127' \
     timeout 600 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f'
@@ -64,9 +64,6 @@ smart_borders on
 
     # Kill focused window
     bindsym $mod+Shift+q kill
-
-    # Lock screen
-    bindsym $mod+Ctrl+l exec swaylock
 
     # Start your launcher
     bindsym $mod+d exec $menu
