@@ -4,23 +4,19 @@
 dir="$HOME/dotfiles/rofi/powermenu"
 
 # CMDs
-uptime="`uptime -p | sed -e 's/up //g'`"
-host=`hostname`
 
 # Options
-shutdown=' Shutdown'
-reboot=' Reboot'
-lock=' Lock'
-suspend=' Suspend'
-logout=' Logout'
-yes=' Yes'
-no=' No'
+shutdown=$'\uf011 Shutdown'
+reboot=$'\uf021 Reboot'
+lock=$'\uf023 Lock'
+suspend=$'\uf186 Suspend'
+logout=$'\uf08b Logout'
+yes=$'\uf00c Yes'
+no=$'\uf00d No'
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-p "$host" \
-		-mesg "Uptime: $uptime" \
 		-theme ${dir}/config.rasi
 }
 
@@ -77,9 +73,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		if [[ -x 'swaylock' ]]; then
-			swaylock
-		fi
+		swaylock
         ;;
     $suspend)
 		run_cmd --suspend
