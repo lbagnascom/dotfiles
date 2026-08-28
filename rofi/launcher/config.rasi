@@ -2,7 +2,7 @@
 configuration {
 	modi:                       "drun";
     show-icons:                 true;
-    display-drun:               "drun";
+    display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
@@ -91,12 +91,13 @@ inputbar {
 
 prompt {
     enabled:                     true;
-    padding:                     15px;
-    border:                      0px 1px 0px 0px;
+    padding:                     10px 7px 10px 18px;
+    border:                      0px 0px 0px 0px;
     border-radius:               0px;
     border-color:                @alternate-background;
     background-color:            inherit;
-    text-color:                  inherit;
+    text-color:                  @background-alt;
+    font:                        "JetBrainsMono Nerd Font 20";
 }
 textbox-prompt-colon {
     enabled:                     true;
