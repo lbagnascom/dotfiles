@@ -1,8 +1,6 @@
-@define-color background      #000000;
+@define-color background      #171717;
 @define-color background-alt  #282B31;
-@define-color foreground      #FFFFFF;
-@define-color selected        #61AFEF;
-@define-color active          #98C379;
+@define-color foreground      #DADBDF;
 @define-color urgent          #E06C75;
 
 * {
@@ -18,7 +16,7 @@
 }
 
 #workspaces button {
-  color: @foreground;
+  color: #7b7c7d;
   padding-left: 0.2em;
   padding-right: 0.2em;
 }
@@ -28,7 +26,7 @@
 }
 
 #workspaces button.focused {
-  color: @selected;
+  color: @foreground;
 }
 
 #workspaces button.urgent {
