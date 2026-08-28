@@ -22,9 +22,8 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      1px solid;
+    border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
     cursor:                      "default";
     background-color:            @background;
 }
@@ -44,7 +43,7 @@ mainbox {
 
 /*****----- Inputbar -----*****/
 inputbar {
-    enabled:                     true;
+    enabled:                     false;
     spacing:                     8px;
     margin:                      0px;
     padding:                     0px;
@@ -147,6 +146,6 @@ element-text {
     horizontal-align:            0.0;
 }
 element selected.normal {
-    background-color:            var(selected);
-    text-color:                  var(background);
+    background-color:            var(background-alt);
+    text-color:                  var(foreground);
 }
