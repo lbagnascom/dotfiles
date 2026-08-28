@@ -10,8 +10,7 @@ set $right l
 set $term foot
 
 # Application launcher
-set $rofi_cmd rofi -terminal '$term'
-set $menu $rofi_cmd -show drun # run -modes combi
+set $menu rofi -show drun -theme ~/dotfiles/rofi/launcher/config.rasi
 
 ### Wallpaper
 output * bg ~/Pictures/wallpaper.jpg fill
@@ -225,7 +224,5 @@ bindsym Print+Shift exec grim -g "$(slurp)" - | swappy -f -
 ### Start default apps
 exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
 exec swaymsg "workspace $ws_firefox; exec firefox"
-# exec swaymsg "workspace $ws_terminal; exec $term"
-# exec swaymsg "workspace $ws_editor; exec zeditor"
 
 include /etc/sway/config.d/*
