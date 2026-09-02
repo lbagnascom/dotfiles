@@ -31,13 +31,6 @@
     variant = "altgr-intl";
   };
 
-  console = {
-    useXkbConfig = true;
-    earlySetup = true;
-    font = "ter-v22n";
-    packages = with pkgs; [ terminus_font ];
-  };
-
   users.users.lauti = {
     isNormalUser = true;
     description = "Lautaro";
