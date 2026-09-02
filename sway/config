@@ -12,6 +12,8 @@ set $term foot
 # Application launcher
 set $menu rofi -show drun -theme ~/dotfiles/rofi/launcher/config.rasi
 
+exec noctalia
+
 ### Wallpaper
 output * bg ~/Pictures/wallpaper.jpg fill
 
@@ -196,11 +198,6 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-### Waybar
-bar {
-    swaybar_command waybar
-}
 
 ### Utilities
 # Special keys to adjust volume

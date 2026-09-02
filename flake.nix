@@ -8,6 +8,11 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -16,7 +21,7 @@
       nixpkgs,
       home-manager,
       ...
-    }:
+    }@inputs:
     let
       system = "x86_64-linux";
       homeManagerConfig = {
@@ -24,6 +29,7 @@
         home-manager.useUserPackages = true;
         home-manager.users.lauti = import ./home.nix;
         home-manager.backupFileExtension = "backup";
+        home-manager.extraSpecialArgs = { inherit inputs; };
       };
     in
     {

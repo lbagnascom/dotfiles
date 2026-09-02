@@ -1,9 +1,18 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   home.username = "lauti";
   home.homeDirectory = "/home/lauti";
   home.stateVersion = "26.05";
+
+  imports = [
+    inputs.noctalia.homeModules.default
+  ];
 
   programs.bash = {
     enable = true;
@@ -118,6 +127,10 @@
     settings = {
       color = "000000";
     };
+  };
+
+  programs.noctalia = {
+    enable = true;
   };
 
   programs.emacs = {
