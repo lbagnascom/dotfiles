@@ -13,6 +13,11 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -40,6 +45,7 @@
             ./common/configuration.nix
             ./hosts/b360m/configuration.nix
             ./hosts/b360m/hardware-configuration.nix
+            inputs.noctalia-greeter.nixosModules.default
             home-manager.nixosModules.home-manager
             homeManagerConfig
           ];
@@ -51,6 +57,7 @@
             ./common/configuration.nix
             ./hosts/thinkpad/configuration.nix
             ./hosts/thinkpad/hardware-configuration.nix
+            inputs.noctalia-greeter.nixosModules.default
             home-manager.nixosModules.home-manager
             homeManagerConfig
           ];

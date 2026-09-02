@@ -110,6 +110,10 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
 
+  programs.noctalia-greeter = {
+    enable = true;
+  };
+
   services.greetd = {
     enable = true;
     useTextGreeter = true;
