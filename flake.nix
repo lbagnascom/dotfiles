@@ -25,30 +25,29 @@
       self,
       nixpkgs,
       home-manager,
+      noctalia,
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
-      homeManagerConfig = {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users.lauti = import ./home.nix;
-        home-manager.backupFileExtension = "backup";
-        home-manager.extraSpecialArgs = { inherit inputs; };
-      };
       buildHostConfig =
         hostConfigDir:
         nixpkgs.lib.nixosSystem {
-          inherit system;
+          system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
             ./common/configuration.nix
             (hostConfigDir + /configuration.nix)
             (hostConfigDir + /hardware-configuration.nix)
             inputs.noctalia-greeter.nixosModules.default
-            inputs.noctalia.nixosModules.default
             home-manager.nixosModules.home-manager
-            homeManagerConfig
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.lauti = import ./home.nix;
+              home-manager.backupFileExtension = "backup";
+              home-manager.sharedModules = [ noctalia.homeModules.default ];
+              home-manager.extraSpecialArgs = { inherit inputs hostConfigDir; };
+            }
           ];
         };
     in

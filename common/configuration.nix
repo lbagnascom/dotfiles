@@ -102,10 +102,6 @@
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
 
-  programs.noctalia = {
-    enable = true;
-  };
-
   programs.noctalia-greeter = {
     enable = true;
   };
