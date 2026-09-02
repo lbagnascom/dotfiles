@@ -94,9 +94,7 @@
     };
   };
 
-  home.file.".config/rofi".source = ./rofi;
   home.file.".config/sway".source = ./sway;
-  home.file.".config/waybar".source = ./waybar;
   home.file.".config/starship.toml".source = ./starship/config.toml;
   home.file.".ssh/config".source = ./ssh/config;
 
@@ -120,13 +118,6 @@
       ms-vscode.cpptools-extension-pack
       mechatroner.rainbow-csv
     ];
-  };
-
-  programs.swaylock = {
-    enable = true;
-    settings = {
-      color = "000000";
-    };
   };
 
   programs.noctalia = {
@@ -172,21 +163,6 @@
 
     # Launcher
     rofi
-
-    # DE
-    waybar
-
-    # Screenshots
-    grim
-    slurp
-    swappy
-    wl-clipboard
-
-    # Screen lock
-    swayidle
-
-    # Notification daemon
-    dunst
 
     # Languages
     nil

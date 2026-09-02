@@ -9,8 +9,6 @@ set $right l
 # Terminal emulator
 set $term foot
 
-exec noctalia
-
 ### Input configuration
 input "type:keyboard" {
     xkb_layout us
@@ -176,8 +174,21 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Noctalia recommended bindings
+set $ipc noctalia msg
+bindsym $mod+space exec $ipc panel-toggle launcher
+bindsym $mod+s exec $ipc panel-toggle control-center
+bindsym $mod+comma exec $ipc settings-toggle
+
+bindsym --locked XF86AudioRaiseVolume exec $ipc volume-up
+bindsym --locked XF86AudioLowerVolume exec $ipc volume-down
+bindsym --locked XF86AudioMute exec $ipc volume-mute
+bindsym --locked XF86MonBrightnessUp exec $ipc brightness-up
+bindsym --locked XF86MonBrightnessDown exec $ipc brightness-down
+
 ### Start default apps
 exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
 exec swaymsg "workspace $ws_firefox; exec firefox"
+exec noctalia
 
 include /etc/sway/config.d/*
