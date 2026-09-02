@@ -91,6 +91,7 @@
 
   home.file.".config/sway".source = ./sway;
   home.file.".config/starship.toml".source = ./starship/config.toml;
+  home.file.".config/noctalia/config.toml".source = ./noctalia/config.toml;
   home.file.".ssh/config".source = ./ssh/config;
 
   home.sessionVariables = {
