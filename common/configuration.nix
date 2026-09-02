@@ -114,17 +114,6 @@
     enable = true;
   };
 
-  services.greetd = {
-    enable = true;
-    useTextGreeter = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd sway";
-        user = "greeter";
-      };
-    };
-  };
-
   # Devenv cache setup
   nix.extraOptions = ''
     extra-substituters = https://devenv.cachix.org
@@ -144,6 +133,10 @@
     enable = true;
     powerOnBoot = false;
   };
+
+  # Battery
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
   services.blueman.enable = true;
 

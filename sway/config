@@ -177,6 +177,7 @@ bindsym $mod+r mode "resize"
 # Noctalia recommended bindings
 set $ipc noctalia msg
 bindsym $mod+d exec $ipc panel-toggle launcher
+bindsym $mod+shift+e exec $ipc panel-toggle session
 bindsym $mod+comma exec $ipc settings-toggle
 
 bindsym --locked XF86AudioRaiseVolume exec $ipc volume-up
