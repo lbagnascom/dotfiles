@@ -1,12 +1,15 @@
-{ pkgs, lib, ... }:
-
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 {
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.networkmanager.enable = true;
-  programs.nm-applet.enable = true;
 
   time.timeZone = "America/Argentina/Buenos_Aires";
 
@@ -55,7 +58,6 @@
     git
     stow
     btop
-    polkit_gnome
   ];
 
   environment.variables = {
@@ -88,7 +90,7 @@
       settings = {
         screencast = {
           chooser_type = "dmenu";
-          chooser_cmd = "${pkgs.rofi}/bin/rofi -dmenu";
+          chooser_cmd = "${inputs.noctalia.packages.${pkgs.system}.default}/bin/noctalia dmenu";
         };
       };
     };
@@ -107,8 +109,9 @@
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
 
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.greetd.enableGnomeKeyring = true;
+  programs.noctalia = {
+    enable = true;
+  };
 
   programs.noctalia-greeter = {
     enable = true;

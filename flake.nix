@@ -36,32 +36,26 @@
         home-manager.backupFileExtension = "backup";
         home-manager.extraSpecialArgs = { inherit inputs; };
       };
+      buildHostConfig =
+        { hostConfigDir }:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./common/configuration.nix
+            (hostConfigDir + /configuration.nix)
+            (hostConfigDir + /hardware-configuration.nix)
+            inputs.noctalia-greeter.nixosModules.default
+            inputs.noctalia.nixosModules.default
+            home-manager.nixosModules.home-manager
+            homeManagerConfig
+          ];
+        };
     in
     {
       nixosConfigurations = {
-        b360m = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./common/configuration.nix
-            ./hosts/b360m/configuration.nix
-            ./hosts/b360m/hardware-configuration.nix
-            inputs.noctalia-greeter.nixosModules.default
-            home-manager.nixosModules.home-manager
-            homeManagerConfig
-          ];
-        };
-
-        thinkpad = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./common/configuration.nix
-            ./hosts/thinkpad/configuration.nix
-            ./hosts/thinkpad/hardware-configuration.nix
-            inputs.noctalia-greeter.nixosModules.default
-            home-manager.nixosModules.home-manager
-            homeManagerConfig
-          ];
-        };
+        b360m = buildHostConfig ./hosts/b360m;
+        thinkpad = buildHostConfig ./hosts/thinkpad;
       };
     };
 }
