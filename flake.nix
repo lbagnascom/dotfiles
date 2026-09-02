@@ -37,7 +37,7 @@
         home-manager.extraSpecialArgs = { inherit inputs; };
       };
       buildHostConfig =
-        { hostConfigDir }:
+        hostConfigDir:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
