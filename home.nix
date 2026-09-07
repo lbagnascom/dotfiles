@@ -120,15 +120,7 @@
     };
   };
 
-  programs.emacs = {
-    enable = true;
-    package = pkgs.emacs-pgtk;
-  };
-
   home.packages = with pkgs; [
-    ripgrep
-    fd
-
     # Programs
     zed-editor
     obsidian
@@ -145,6 +137,9 @@
     chromium
     file-roller
     zotero
+
+    # File manager
+    ranger
 
     # Video
     vlc
@@ -173,7 +168,7 @@
     swayidle
 
     # Notification daemon
-    dunst
+    swaynotificationcenter
 
     # Languages
     nil
