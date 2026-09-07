@@ -19,36 +19,29 @@
     }:
     let
       system = "x86_64-linux";
-      homeManagerConfig = {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users.lauti = import ./home.nix;
-        home-manager.backupFileExtension = "backup";
-      };
-    in
-    {
-      nixosConfigurations = {
-        b360m = nixpkgs.lib.nixosSystem {
+      buildHostConfig =
+        hostConfigDir:
+        nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             ./common/configuration.nix
-            ./hosts/b360m/configuration.nix
-            ./hosts/b360m/hardware-configuration.nix
+            (hostConfigDir + /configuration.nix)
+            (hostConfigDir + /hardware-configuration.nix)
             home-manager.nixosModules.home-manager
-            homeManagerConfig
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.lauti = import ./home.nix;
+              home-manager.backupFileExtension = "backup";
+            }
           ];
         };
 
-        thinkpad = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./common/configuration.nix
-            ./hosts/thinkpad/configuration.nix
-            ./hosts/thinkpad/hardware-configuration.nix
-            home-manager.nixosModules.home-manager
-            homeManagerConfig
-          ];
-        };
+    in
+    {
+      nixosConfigurations = {
+        b360m = buildHostConfig ./hosts/b360m;
+        thinkpad = buildHostConfig ./hosts/thinkpad;
       };
     };
 }
