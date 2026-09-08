@@ -104,15 +104,15 @@
   security.pam.services.greetd.enableGnomeKeyring = true;
 
   # Greeter
-  services.greetd.enable = true;
-  programs.regreet = {
+  services.greetd = {
     enable = true;
-    theme.name = "Adwaita:dark";
-    font = {
-      name = "Cantarell";
-      size = 16;
+    useTextGreeter = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd sway";
+        user = "greeter";
+      };
     };
-    cursorTheme.name = "Adwaita";
   };
 
   nix.extraOptions = ''
