@@ -88,6 +88,7 @@
 
   home.file.".config/rofi".source = ./rofi;
   home.file.".config/sway".source = ./sway;
+  home.file.".config/swaync".source = ./swaync;
   home.file.".config/waybar".source = ./waybar;
   home.file.".config/starship.toml".source = ./starship/config.toml;
   home.file.".ssh/config".source = ./ssh/config;
