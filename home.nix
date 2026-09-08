@@ -158,7 +158,7 @@
     # DE
     waybar
 
-    # Screenshots
+    # Screenshots & Clipboard
     grim
     slurp
     swappy
