@@ -103,18 +103,18 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
 
-  services.greetd = {
+  # Greeter
+  services.greetd.enable = true;
+  programs.regreet = {
     enable = true;
-    useTextGreeter = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd sway";
-        user = "greeter";
-      };
+    theme.name = "Adwaita:dark";
+    font = {
+      name = "Cantarell";
+      size = 16;
     };
+    cursorTheme.name = "Adwaita";
   };
 
-  # Devenv cache setup
   nix.extraOptions = ''
     extra-substituters = https://devenv.cachix.org
     extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
