@@ -7,15 +7,12 @@
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["clock"],
   "modules-right": [
-    "wireplumber", "battery", "idle_inhibitor", "network", "bluetooth", "tray"
+    "wireplumber", "battery", "idle_inhibitor", "network", "bluetooth", "custom/notification", "tray"
   ],
 
   "sway/workspaces": {
     "disable-scroll": true,
     "format": "{icon}",
-    "format-icons": {
-      "urgent": "󰳤",
-    }
   },
 
   "network": {
@@ -61,6 +58,7 @@
   "clock": {
     "timezone": "America/Argentina/Buenos_Aires",
     "format": "{:%d·%m·%Y | %H:%M}",
+    "tooltip": false,
   },
 
   "wireplumber": {
@@ -80,5 +78,27 @@
         "activated": "\udb80\udd76",
         "deactivated": "\udb83\udfaa"
     }
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='#D29922'>󰂚</span>",
+      "none": "<span foreground='#d0d7de'>󰂚</span>",
+      "dnd-notification": "<span foreground='#D29922'>󰂛</span>",
+      "dnd-none": "<span foreground='#d0d7de'>󰂛</span>",
+      "inhibited-notification": "<span foreground='#D29922'>󰂚</span>",
+      "inhibited-none": "<span foreground='#d0d7de'>󰂚</span>",
+      "dnd-inhibited-notification": "<span foreground='#D29922'>󰂛</span>",
+      "dnd-inhibited-none": "<span foreground='#d0d7de'>󰂛</span>"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb --skip-wait",
+    "on-click": "swaync-client -t",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+    "restart-interval": 3
   }
 }
