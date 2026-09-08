@@ -57,6 +57,7 @@ smart_borders on
 
 ### Includes
 include ./keybindings.conf
+include ./floating-windows.conf
 
 ### Waybar
 bar {
