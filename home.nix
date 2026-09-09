@@ -88,7 +88,7 @@
 
   home.file.".config/rofi".source = ./rofi;
   home.file.".config/sway".source = ./sway;
-  home.file.".config/swaync".source = ./swaync;
+  home.file.".config/mako".source = ./mako;
   home.file.".config/waybar".source = ./waybar;
   home.file.".config/starship.toml".source = ./starship/config.toml;
   home.file.".ssh/config".source = ./ssh/config;
@@ -120,6 +120,10 @@
     settings = {
       color = "000000";
     };
+  };
+
+  services.mako = {
+    enable = true;
   };
 
   home.packages = with pkgs; [
@@ -168,9 +172,6 @@
 
     # Screen lock
     swayidle
-
-    # Notification daemon
-    swaynotificationcenter
 
     # Languages
     nil
