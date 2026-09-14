@@ -115,17 +115,6 @@
     ];
   };
 
-  programs.swaylock = {
-    enable = true;
-    settings = {
-      color = "000000";
-    };
-  };
-
-  services.mako = {
-    enable = true;
-  };
-
   home.packages = with pkgs; [
     # Programs
     zed-editor
@@ -161,9 +150,6 @@
     # Launcher
     rofi
 
-    # DE
-    waybar
-
     # Screenshots & Clipboard
     grim
     slurp
@@ -171,8 +157,6 @@
     wl-clipboard
 
     # Screen lock
-    swayidle
-
     # Languages
     nil
     nixd

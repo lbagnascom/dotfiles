@@ -23,6 +23,14 @@
     LC_TIME = "es_AR.UTF-8";
   };
 
+  services.xserver = {
+    enable = true;
+    desktopManager = {
+      # xterm.enable = false;
+      xfce.enable = true;
+    };
+  };
+
   services.xserver.xkb = {
     layout = "us";
     variant = "altgr-intl";
@@ -55,7 +63,7 @@
     XCURSOR_THEME = "Adwaita";
     XCURSOR_SIZE = "24";
     GTK_THEME = "Adwaita:dark";
-    QT_QPA_PLATFORM = "wayland;xcb";
+    # QT_QPA_PLATFORM = "wayland;xcb";
     MOZ_ENABLE_WAYLAND = 1;
   };
 
@@ -68,11 +76,6 @@
     nerd-fonts.symbols-only
     symbola
   ];
-
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
 
   xdg.portal = {
     enable = true;
