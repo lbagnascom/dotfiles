@@ -46,6 +46,8 @@
     stow
     btop
     polkit_gnome
+
+    kdePackages.krohnkite
   ];
 
   environment.variables = {
