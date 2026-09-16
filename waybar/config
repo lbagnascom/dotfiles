@@ -1,13 +1,12 @@
 {
   "layer": "top",
-  "position": "top",
-  "height": 24,
+  "position": "bottom",
+  "height": 20,
   "spacing": 5,
 
   "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["clock"],
   "modules-right": [
-    "wireplumber", "battery", "idle_inhibitor", "network", "bluetooth", "custom/notification", "tray"
+    "wireplumber", "battery", "idle_inhibitor", "network", "bluetooth", "custom/notification", "tray", "clock"
   ],
 
   "sway/workspaces": {
