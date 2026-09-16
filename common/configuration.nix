@@ -33,6 +33,7 @@
         enableXfwm = false;
       };
     };
+    # TODO FIX
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
