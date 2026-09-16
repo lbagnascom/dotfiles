@@ -192,6 +192,9 @@
     # Screen lock
     swayidle
 
+    # Git
+    lazygit
+
     # Languages
     nil
     nixd
