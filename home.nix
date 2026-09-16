@@ -115,17 +115,6 @@
     ];
   };
 
-  programs.swaylock = {
-    enable = true;
-    settings = {
-      color = "000000";
-    };
-  };
-
-  services.mako = {
-    enable = true;
-  };
-
   home.packages = with pkgs; [
     # Programs
     zed-editor
@@ -149,29 +138,9 @@
 
     # Video
     vlc
-    wdisplays
-
-    # Audio
-    pavucontrol
-    playerctl
 
     # Image viewer
     feh
-
-    # Launcher
-    rofi
-
-    # DE
-    waybar
-
-    # Screenshots & Clipboard
-    grim
-    slurp
-    swappy
-    wl-clipboard
-
-    # Screen lock
-    swayidle
 
     # Languages
     nil
