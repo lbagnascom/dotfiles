@@ -81,7 +81,7 @@
       settings = {
         screencast = {
           chooser_type = "dmenu";
-          chooser_cmd = "${pkgs.rofi}/bin/rofi -dmenu";
+          chooser_cmd = "${pkgs.rofi}/bin/rofi -dmenu -theme ~/dotfiles/rofi/screen-picker/config.rasi";
         };
       };
     };
