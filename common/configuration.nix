@@ -76,6 +76,11 @@
     displayManager.plasma-login-manager.enable = true;
   };
 
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    plasma-browser-integration
+    konsole
+  ];
+
   # Docker
   virtualisation.docker = {
     enable = true;
