@@ -5,9 +5,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.networkmanager.enable = true;
-  programs.nm-applet.enable = true;
-
   time.timeZone = "America/Argentina/Buenos_Aires";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -42,7 +39,7 @@
     };
   };
 
-  services.displayManager.defaultSession = "xfce";
+  services.displayManager.defaultSession = "xfce+i3";
 
   services.xserver.xkb = {
     layout = "us";
@@ -69,7 +66,6 @@
     git
     stow
     btop
-    polkit_gnome
   ];
 
   environment.variables = {
@@ -77,7 +73,7 @@
     XCURSOR_SIZE = "24";
     GTK_THEME = "Adwaita:dark";
     # QT_QPA_PLATFORM = "wayland;xcb";
-    MOZ_ENABLE_WAYLAND = 1;
+    # MOZ_ENABLE_WAYLAND = 1;
   };
 
   fonts.packages = with pkgs; [
