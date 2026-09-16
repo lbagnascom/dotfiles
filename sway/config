@@ -39,15 +39,6 @@ input "type:touchpad" {
     scroll_method two_finger
 }
 
-### Dark mode
-set $gs org.gnome.desktop.interface
-exec_always {
-    gsettings set $gs gtk-theme 'Adwaita-dark'
-    gsettings set $gs icon-theme 'Adwaita'
-    gsettings set $gs cursor-theme 'Adwaita'
-    gsettings set $gs color-scheme 'prefer-dark'
-}
-
 ### Window borders
 default_border pixel 1
 default_floating_border normal

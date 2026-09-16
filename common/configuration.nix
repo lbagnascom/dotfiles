@@ -74,6 +74,8 @@
     wrapperFeatures.gtk = true;
   };
 
+  programs.dconf.enable = true;
+
   xdg.portal = {
     enable = true;
     wlr = {

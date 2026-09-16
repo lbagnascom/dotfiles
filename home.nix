@@ -77,6 +77,34 @@
     enableFishIntegration = true;
   };
 
+  home.pointerCursor = {
+    enable = true;
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita";
+      package = pkgs.gnome-themes-extra;
+    };
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+    # font = {
+    #   name = "Cantarell";
+    #   size = 11;
+    # };
+    # GTK3 lee esto; GTK4 lee el color-scheme de abajo
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+  };
+
   qt = {
     enable = true;
     platformTheme.name = "adwaita";
@@ -95,15 +123,6 @@
 
   home.sessionVariables = {
     TEXMFAUXTREES = "/home/lauti/plp/catedra/texmf,";
-  };
-
-  home.pointerCursor = {
-    enable = true;
-    gtk.enable = true;
-    x11.enable = true;
-    package = pkgs.adwaita-icon-theme;
-    name = "Adwaita";
-    size = 24;
   };
 
   programs.vscode = {
