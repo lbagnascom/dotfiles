@@ -138,23 +138,13 @@
 
     # Video
     vlc
-    wdisplays
-
-    # Audio
-    pavucontrol
-    playerctl
 
     # Image viewer
     feh
 
-    # Launcher
-    rofi
-
     # Screenshots & Clipboard
     grim
     slurp
-    swappy
-    wl-clipboard
 
     # Screen lock
     # Languages

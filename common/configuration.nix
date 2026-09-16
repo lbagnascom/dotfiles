@@ -26,10 +26,12 @@
   services.xserver = {
     enable = true;
     desktopManager = {
-      # xterm.enable = false;
+      xterm.enable = false;
       xfce.enable = true;
     };
   };
+
+  services.displayManager.defaultSession = "xfce";
 
   services.xserver.xkb = {
     layout = "us";
@@ -77,20 +79,6 @@
     symbola
   ];
 
-  xdg.portal = {
-    enable = true;
-    wlr = {
-      enable = true;
-      settings = {
-        screencast = {
-          chooser_type = "dmenu";
-          chooser_cmd = "${pkgs.rofi}/bin/rofi -dmenu";
-        };
-      };
-    };
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
-
   # Thunar
   programs.thunar = {
     enable = true;
@@ -103,39 +91,10 @@
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
 
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.greetd.enableGnomeKeyring = true;
-
-  # Greeter
-  services.greetd = {
-    enable = true;
-    useTextGreeter = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd sway";
-        user = "greeter";
-      };
-    };
-  };
-
   nix.extraOptions = ''
     extra-substituters = https://devenv.cachix.org
     extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
   '';
-
-  # Audio
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
-
-  # Bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = false;
-  };
 
   services.blueman.enable = true;
 
