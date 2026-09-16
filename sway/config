@@ -43,8 +43,11 @@ input "type:touchpad" {
 default_border pixel 1
 default_floating_border normal
 hide_edge_borders smart
-
 smart_borders on
+
+## Border colors (client.<class> <border> <background> <text> <indicator> <child_border>)
+client.focused #282b31 #285577 #ffffff #2e9ef4 #285577
+
 
 ### Includes
 include ./keybindings.conf
