@@ -1,44 +1,24 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./waybar.nix
+  ];
+
   home.username = "lauti";
   home.homeDirectory = "/home/lauti";
   home.stateVersion = "26.05";
 
-  programs.bash = {
-    enable = true;
-  };
-
+  programs.bash.enable = true;
   programs.foot = {
     enable = true;
     settings = {
       main = {
         shell = "${pkgs.fish}/bin/fish --login --interactive";
-        font = "monospace:size=13";
       };
       cursor = {
         blink = false;
         style = "block";
-      };
-      colors-dark = {
-        background = "000000";
-        foreground = "dadada";
-        regular0 = "232a2d";
-        regular1 = "e57474";
-        regular2 = "8ccf7e";
-        regular3 = "e5c76b";
-        regular4 = "67b0e8";
-        regular5 = "c47fd5";
-        regular6 = "6cbfbf";
-        regular7 = "b3b9b8";
-        bright0 = "2d3437";
-        bright1 = "ef7e7e";
-        bright2 = "96d988";
-        bright3 = "f4d67a";
-        bright4 = "71baf2";
-        bright5 = "ce89df";
-        bright6 = "67cbe7";
-        bright7 = "bdc3c2";
       };
     };
   };
@@ -86,39 +66,12 @@
     x11.enable = true;
   };
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita";
-      package = pkgs.gnome-themes-extra;
-    };
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-    };
-    # font = {
-    #   name = "Cantarell";
-    #   size = 11;
-    # };
-    # GTK3 lee esto; GTK4 lee el color-scheme de abajo
-    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
-    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "adwaita";
-    style = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-qt;
-    };
-  };
+  gtk.enable = true;
+  qt.enable = true;
 
   home.file.".config/rofi".source = ./rofi;
   home.file.".config/sway".source = ./sway;
   home.file.".config/mako".source = ./mako;
-  home.file.".config/waybar".source = ./waybar;
-  home.file.".config/starship.toml".source = ./starship/config.toml;
   home.file.".ssh/config".source = ./ssh/config;
 
   home.sessionVariables = {
@@ -134,16 +87,8 @@
     ];
   };
 
-  programs.swaylock = {
-    enable = true;
-    settings = {
-      color = "000000";
-    };
-  };
-
-  services.mako = {
-    enable = true;
-  };
+  programs.swaylock.enable = true;
+  services.mako.enable = true;
 
   home.packages = with pkgs; [
     # Programs

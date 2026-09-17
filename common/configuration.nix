@@ -54,8 +54,6 @@
   environment.variables = {
     XCURSOR_THEME = "Adwaita";
     XCURSOR_SIZE = "24";
-    GTK_THEME = "Adwaita:dark";
-    QT_QPA_PLATFORM = "wayland;xcb";
     MOZ_ENABLE_WAYLAND = 1;
   };
 
@@ -93,7 +91,7 @@
   # Stylix
   stylix = {
     enable = true;
-    base16Scheme = ./themes/ayu-dark.yaml;
+    base16Scheme = ../themes/ayu-dark.yaml;
   };
 
   # Thunar
