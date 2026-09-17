@@ -3,6 +3,7 @@
 {
   imports = [
     ./waybar.nix
+    ./rofi.nix
   ];
 
   home.username = "lauti";
@@ -69,7 +70,6 @@
   gtk.enable = true;
   qt.enable = true;
 
-  home.file.".config/rofi".source = ./rofi;
   home.file.".config/sway".source = ./sway;
   home.file.".config/mako".source = ./mako;
   home.file.".ssh/config".source = ./ssh/config;

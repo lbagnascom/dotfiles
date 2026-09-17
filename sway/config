@@ -10,7 +10,7 @@ set $right l
 set $term foot
 
 # Application launcher
-set $menu rofi -show drun -theme ~/dotfiles/rofi/launcher/config.rasi
+set $menu rofi -show drun -theme ~/.config/rofi/launcher/config.rasi
 
 ### Wallpaper
 output * bg ~/Pictures/wallpaper.jpg fill

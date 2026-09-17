@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Dir
-dir="$HOME/dotfiles/rofi/powermenu"
+dir="$HOME/.config/rofi/powermenu"
 
 # CMDs
 
