@@ -68,6 +68,8 @@
   stylix.targets.gtk.extraCss = ''
     * {
       border-radius: 0px;
+      border-color: #${config.lib.stylix.colors.base03};
+      outline-color: #${config.lib.stylix.colors.base03};
     }
   '';
 

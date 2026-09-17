@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 
 {
   wayland.windowManager.sway = {
@@ -194,5 +194,22 @@
       include /etc/sway/config.d/*
     '';
   };
+
+  wayland.windowManager.sway.config.colors.focused.border =
+    lib.mkForce "#${config.lib.stylix.colors.base03}";
+  wayland.windowManager.sway.config.colors.focused.childBorder =
+    lib.mkForce "#${config.lib.stylix.colors.base03}";
+  wayland.windowManager.sway.config.colors.focusedInactive.border =
+    lib.mkForce "#${config.lib.stylix.colors.base01}";
+  wayland.windowManager.sway.config.colors.focusedInactive.childBorder =
+    lib.mkForce "#${config.lib.stylix.colors.base01}";
+  wayland.windowManager.sway.config.colors.unfocused.border =
+    lib.mkForce "#${config.lib.stylix.colors.base01}";
+  wayland.windowManager.sway.config.colors.unfocused.childBorder =
+    lib.mkForce "#${config.lib.stylix.colors.base01}";
+  wayland.windowManager.sway.config.colors.placeholder.border =
+    lib.mkForce "#${config.lib.stylix.colors.base01}";
+  wayland.windowManager.sway.config.colors.placeholder.childBorder =
+    lib.mkForce "#${config.lib.stylix.colors.base01}";
 
 }

@@ -49,6 +49,7 @@
     stow
     btop
     polkit_gnome
+    base16-schemes
   ];
 
   environment.variables = {
@@ -91,7 +92,7 @@
   # Stylix
   stylix = {
     enable = true;
-    base16Scheme = ../themes/ayu-dark.yaml;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
     image = ../wallpaper.jpg;
   };
 

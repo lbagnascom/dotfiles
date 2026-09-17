@@ -10,7 +10,7 @@
           background:     #${colors.base00}FF;
           background-alt: #${colors.base01}FF;
           foreground:     #${colors.base05}FF;
-          selected:       #${colors.base0D}FF;
+          selected:       #${colors.base03}FF;
           active:         #${colors.base0B}FF;
           urgent:         #${colors.base08}FF;
       }

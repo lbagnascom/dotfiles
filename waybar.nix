@@ -166,6 +166,11 @@
         color: @base03;
         padding-left: 0.2em;
         padding-right: 0.2em;
+        border: none;
+      }
+
+      tooltip {
+        border: 1px solid @base03;
       }
 
       #workspaces button.empty {
