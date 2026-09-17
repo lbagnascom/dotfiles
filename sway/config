@@ -45,10 +45,6 @@ default_floating_border normal
 hide_edge_borders smart
 smart_borders on
 
-## Styles:       border  background text    indicator child_border
-client.focused   #282b31 #1e2127    #dadbdf #2e9ef4   #282b31
-client.unfocused #000000 #171717    #7b7c7d #292d2e   #000000
-
 ### Includes
 include ./keybindings.conf
 include ./floating-windows.conf

@@ -90,6 +90,12 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
+  # Stylix
+  stylix = {
+    enable = true;
+    stylix.base16Scheme = ./themes/ayu-dark.yaml;
+  };
+
   # Thunar
   programs.thunar = {
     enable = true;
