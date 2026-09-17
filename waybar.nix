@@ -153,6 +153,8 @@
         font-size: 15px;
         padding: 0;
         margin: 0;
+        border-radius: 0px;
+        box-shadow: none;
       }
 
       #waybar {
@@ -164,6 +166,7 @@
         color: @base03;
         padding-left: 0.2em;
         padding-right: 0.2em;
+        border: none;
       }
 
       #workspaces button.empty {
