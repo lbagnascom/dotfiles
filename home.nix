@@ -68,19 +68,13 @@
     x11.enable = true;
   };
 
-  gtk = {
-    enable = true;
-    gtk3.extraCss = ''
-      * {
-        border-radius: 0px;
-      }
-    '';
-    gtk4.extraCss = ''
-      * {
-        border-radius: 0px;
-      }
-    '';
-  };
+  gtk.enable = true;
+  stylix.targets.gtk.extraCss = ''
+    * {
+      border-radius: 0px;
+    }
+  '';
+
   qt.enable = true;
 
   home.file.".config/mako".source = ./mako;
