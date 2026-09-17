@@ -93,7 +93,7 @@
   # Stylix
   stylix = {
     enable = true;
-    stylix.base16Scheme = ./themes/ayu-dark.yaml;
+    base16Scheme = ./themes/ayu-dark.yaml;
   };
 
   # Thunar
