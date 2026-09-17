@@ -29,90 +29,37 @@
         };
       };
       window = {
-        border = 1;
-        hideEdgeBorders = "smart";
-        commands = [
-          {
-            criteria = {
-              app_id = "wdisplays";
+        commands =
+          let
+            floatingApp = app_id: {
+              criteria = {
+                app_id = app_id;
+              };
+              command = "floating enable, move position center";
             };
-            command = "floating enable, move position center";
-          }
-          {
-            criteria = {
-              app_id = "pavucontrol";
+            floatingThunarTitle = title: {
+              criteria = {
+                app_id = "thunar";
+                title = "File Operation Progress";
+              };
+              command = "floating enable, move position center";
             };
-            command = "floating enable, move position center";
-          }
-          {
-            criteria = {
-              app_id = "blueman-manager";
-            };
-            command = "floating enable, move position center";
-          }
-          {
-            criteria = {
-              app_id = "nm-connection-editor";
-            };
-            command = "floating enable, move position center";
-          }
-          {
-            criteria = {
-              app_id = "thunar";
-              title = "File Operation Progress";
-            };
-            command = "floating enable, move position center";
-          }
-          {
-            criteria = {
-              app_id = "thunar";
-              title = "Confirm *";
-            };
-            command = "floating enable, move position center";
-          }
-          {
-            criteria = {
-              app_id = "thunar";
-              title = "Properties";
-            };
-            command = "floating enable, move position center";
-          }
-          {
-            criteria = {
-              app_id = "thunar";
-              title = "Rename *";
-            };
-            command = "floating enable, move position center";
-          }
-          {
-            criteria = {
-              app_id = "thunar";
-              title = "Create *";
-            };
-            command = "floating enable, move position center";
-          }
-          {
-            criteria = {
-              app_id = "thunar";
-              title = "Error *";
-            };
-            command = "floating enable, move position center";
-          }
-          {
-            criteria = {
-              app_id = "thunar";
-              title = "Question *";
-            };
-            command = "floating enable, move position center";
-          }
-          {
-            criteria = {
-              app_id = "thunar";
-              title = "Warning *";
-            };
-            command = "floating enable, move position center";
-          }
-        ];
+          in
+
+          [
+            (floatingApp "wdisplays")
+            (floatingApp "pavucontrol")
+            (floatingApp "blueman-manager")
+            (floatingApp "nm-connection-editor")
+            (floatingThunarTitle "File Operation Progress")
+            (floatingThunarTitle "Confirm *")
+            (floatingThunarTitle "Properties")
+            (floatingThunarTitle "Rename *")
+            (floatingThunarTitle "Create *")
+            (floatingThunarTitle "Error *")
+            (floatingThunarTitle "Question *")
+            (floatingThunarTitle "Warning *")
+          ];
       };
 
       floating = {
@@ -224,6 +171,8 @@
     };
 
     extraConfig = ''
+      default_border pixel 1
+      hide_edge_borders smart
       default_floating_border normal
       smart_borders on
 
