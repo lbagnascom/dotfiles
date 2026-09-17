@@ -5,6 +5,7 @@
     ./waybar.nix
     ./rofi.nix
     ./sway.nix
+    ./starship.nix
   ];
 
   home.username = "lauti";
@@ -36,11 +37,6 @@
   };
 
   programs.home-manager.enable = true;
-
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-  };
 
   programs.git = {
     enable = true;
