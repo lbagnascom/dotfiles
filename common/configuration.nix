@@ -92,6 +92,7 @@
   stylix = {
     enable = true;
     base16Scheme = ../themes/ayu-dark.yaml;
+    image = ../wallpaper.jpg;
   };
 
   # Thunar
