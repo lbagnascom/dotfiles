@@ -25,6 +25,9 @@
       };
     };
   };
+  stylix.targets.foot.colors.override = {
+    base00 = "000000";
+  };
 
   programs.fish = {
     enable = true;
@@ -34,6 +37,9 @@
     shellAliases = {
       start-docker = "sudo systemctl start docker.socket && sudo systemctl start docker && systemctl --user start docker";
     };
+  };
+  stylix.targets.fish.colors.override = {
+    base00 = "000000";
   };
 
   programs.home-manager.enable = true;
@@ -66,10 +72,8 @@
 
   gtk.enable = true;
   stylix.targets.gtk.extraCss = ''
-    * {
+    window {
       border-radius: 0px;
-      border-color: #${config.lib.stylix.colors.base03};
-      outline-color: #${config.lib.stylix.colors.base03};
     }
   '';
 
@@ -113,6 +117,7 @@
     zotero
 
     # File manager
+    localsend
     ranger
 
     # Video
