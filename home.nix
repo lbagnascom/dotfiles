@@ -25,8 +25,9 @@
       };
     };
   };
-  stylix.targets.foot.colors.override = {
-    base00 = "000000";
+  stylix.targets.foot = {
+    fonts.override.sizes.terminal = 13;
+    colors.override.base00 = "000000";
   };
 
   programs.fish = {
@@ -38,9 +39,7 @@
       start-docker = "sudo systemctl start docker.socket && sudo systemctl start docker && systemctl --user start docker";
     };
   };
-  stylix.targets.fish.colors.override = {
-    base00 = "000000";
-  };
+  stylix.targets.fish.enable = false;
 
   programs.home-manager.enable = true;
 
