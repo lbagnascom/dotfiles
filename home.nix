@@ -65,6 +65,7 @@
   };
 
   gtk.enable = true;
+  stylix.targets.vscode.enable = false;
   stylix.targets.gtk.extraCss = ''
     * {
       border-radius: 0px;
@@ -113,6 +114,7 @@
     zotero
 
     # File manager
+    localsend
     ranger
 
     # Video
