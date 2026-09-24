@@ -25,6 +25,10 @@
       };
     };
   };
+  stylix.targets.foot = {
+    fonts.override.sizes.terminal = 13;
+    colors.override.base00 = "000000";
+  };
 
   programs.fish = {
     enable = true;
@@ -35,6 +39,7 @@
       start-docker = "sudo systemctl start docker.socket && sudo systemctl start docker && systemctl --user start docker";
     };
   };
+  stylix.targets.fish.enable = false;
 
   programs.home-manager.enable = true;
 
@@ -67,10 +72,8 @@
   gtk.enable = true;
   stylix.targets.vscode.enable = false;
   stylix.targets.gtk.extraCss = ''
-    * {
+    window {
       border-radius: 0px;
-      border-color: #${config.lib.stylix.colors.base03};
-      outline-color: #${config.lib.stylix.colors.base03};
     }
   '';
 

@@ -82,7 +82,7 @@
       settings = {
         screencast = {
           chooser_type = "dmenu";
-          chooser_cmd = "${pkgs.rofi}/bin/rofi -dmenu -theme ~/dotfiles/rofi/screen-picker/config.rasi";
+          chooser_cmd = "${pkgs.rofi}/bin/rofi -dmenu -theme ~/.config/rofi/screen-picker/config.rasi";
         };
       };
     };
@@ -92,8 +92,13 @@
   # Stylix
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/precious-dark-eleven.yaml";
     image = ../wallpaper.jpg;
+    polarity = "dark";
+    fonts.monospace = {
+      package = pkgs.jetbrains-mono;
+      name = "JetBrains Mono";
+    };
   };
 
   # Thunar
